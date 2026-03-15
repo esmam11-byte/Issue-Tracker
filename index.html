@@ -88,9 +88,15 @@ Sign In
       </div>
     </div>
     
-    <div id="issuesContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"></div>
+<div class="max-w-6xl mx-auto mt-8">
 
-  </div>        
+<div id="loadingSpinner" class="flex justify-center items-center py-20 hidden">
+<span class="loading loading-spinner loading-lg text-primary"></span>
+</div>
+
+<div id="issuesContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"></div>
+
+</div>       
 </div>
 
 <dialog id="issueModal" class="modal modal-bottom sm:modal-middle">

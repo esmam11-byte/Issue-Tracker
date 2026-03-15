@@ -25,8 +25,13 @@ if(username==="admin" && password==="admin123"){
 document.getElementById("loginPage").classList.add("hidden")
 document.getElementById("dashboard").classList.remove("hidden")
 
+showLoading()
+
+setTimeout(() => {
 generateIssues()
 renderIssues()
+hideLoading()
+}, 1200)
 
 }else{
 alert("Wrong username or password")
@@ -337,5 +342,18 @@ labels+=`<span class="text-xs bg-green-100 text-green-600 px-3 py-1 rounded-full
 document.getElementById("modalLabels").innerHTML=labels
 
 document.getElementById("issueModal").showModal()
+
+}
+function showLoading(){
+
+document.getElementById("loadingSpinner").classList.remove("hidden")
+document.getElementById("issuesContainer").classList.add("hidden")
+
+}
+
+function hideLoading(){
+
+document.getElementById("loadingSpinner").classList.add("hidden")
+document.getElementById("issuesContainer").classList.remove("hidden")
 
 }
