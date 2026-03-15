@@ -124,11 +124,17 @@ let labels=""
 
 issue.labels.forEach(label=>{
 if(label==="bug"){
-labels+=`<span class="text-xs border border-red-200 text-red-500 px-2 py-1 rounded-full">🐞 BUG</span>`
+labels+=`<span class="text-xs bg-red-100 text-red-500 px-3 py-1 rounded-full font-semibold flex items-center gap-1">
+🐞 BUG
+</span>`
 }
+
 if(label==="help wanted"){
-labels+=`<span class="text-xs border border-orange-200 text-orange-500 px-2 py-1 rounded-full">⚠ HELP WANTED</span>`
+labels+=`<span class="text-xs bg-orange-100 text-orange-600 px-3 py-1 rounded-full font-semibold flex items-center gap-1">
+⚠ HELP WANTED
+</span>`
 }
+
 if(label==="enhancement"){
 labels+=`<span class="text-xs bg-green-100 text-green-600 px-3 py-1 rounded-full">✧ ENHANCEMENT</span>`
 }
@@ -303,11 +309,17 @@ let labels=""
 
 issue.labels.forEach(label=>{
 if(label==="bug"){
-labels+=`<span class="text-xs border border-red-200 text-red-500 px-2 py-1 rounded-full">🐞 BUG</span>`
+labels+=`<span class="text-xs bg-red-100 text-red-500 px-3 py-1 rounded-full font-semibold flex items-center gap-1">
+🐞 BUG
+</span>`
 }
+
 if(label==="help wanted"){
-labels+=`<span class="text-xs border border-orange-200 text-orange-500 px-2 py-1 rounded-full">⚠ HELP WANTED</span>`
+labels+=`<span class="text-xs bg-orange-100 text-orange-600 px-3 py-1 rounded-full font-semibold flex items-center gap-1">
+⚠ HELP WANTED
+</span>`
 }
+
 if(label==="enhancement"){
 labels+=`<span class="text-xs bg-green-100 text-green-600 px-3 py-1 rounded-full">✧ ENHANCEMENT</span>`
 }
