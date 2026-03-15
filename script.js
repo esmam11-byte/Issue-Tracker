@@ -224,6 +224,7 @@ container.innerHTML=""
 
 document.getElementById("issueCount").innerText = results.length
 
+
 results.forEach(issue=>{
 
 let icon = issue.status==="open"
@@ -236,24 +237,45 @@ let border = issue.status==="open"
 
 let priorityColor =
 issue.priority==="HIGH"
-? "bg-red-100 text-red-500"
+? "bg-red-500 text-white"
 : issue.priority==="MEDIUM"
-? "bg-yellow-100 text-yellow-600"
-: "bg-gray-200 text-gray-500"
+? "bg-yellow-400 text-black"
+: "bg-gray-400 text-white"
 
-let card = document.createElement("div")
+let labels=""
 
-card.className = `bg-base-100 rounded-xl shadow hover:shadow-lg transition cursor-pointer ${border}`
+issue.labels.forEach(label=>{
 
-card.innerHTML = `
+if(label==="bug"){
+labels+=`<span class="bg-red-100 text-red-600 px-3 py-1 text-xs rounded-full font-semibold">🐞 BUG</span>`
+}
+
+if(label==="help wanted"){
+labels+=`<span class="bg-orange-100 text-orange-600 px-3 py-1 text-xs rounded-full font-semibold">⚠ HELP WANTED</span>`
+}
+
+if(label==="enhancement"){
+labels+=`<span class="bg-green-100 text-green-600 px-3 py-1 text-xs rounded-full font-semibold">✨ ENHANCEMENT</span>`
+}
+
+})
+
+let card=document.createElement("div")
+
+card.className=`bg-base-100 rounded-xl shadow hover:shadow-lg transition cursor-pointer ${border}`
+
+card.innerHTML=`
+
 <div class="p-4">
 
 <div class="flex justify-between items-center mb-2">
+
 <img src="${icon}" class="w-6">
 
-<span class="px-3 py-1 text-xs font-semibold rounded-full ${priorityColor}">
+<span class="px-3 py-1 text-xs rounded-full ${priorityColor}">
 ${issue.priority}
 </span>
+
 </div>
 
 <h2 class="font-semibold text-sm mb-1">
@@ -263,6 +285,10 @@ ${issue.title}
 <p class="text-xs text-gray-500 mb-3">
 ${issue.desc}
 </p>
+
+<div class="flex gap-2 mb-3 flex-wrap">
+${labels}
+</div>
 
 <hr class="mb-2">
 
@@ -277,7 +303,7 @@ ${issue.date}
 </div>
 `
 
-card.addEventListener("click", ()=> openModal(issue))
+card.addEventListener("click",()=>openModal(issue))
 
 container.appendChild(card)
 
