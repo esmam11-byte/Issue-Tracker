@@ -282,12 +282,21 @@ container.appendChild(card)
 
 function openModal(issue){
 
-let statusClass = issue.status==="open"
-? "bg-green-100 text-green-700"
-: "bg-purple-100 text-purple-700"
+let statusClass
+let statusText
 
-document.getElementById("modalStatus").className=`px-3 py-1 text-xs rounded-full font-semibold ${statusClass}`
-document.getElementById("modalStatus").innerText=issue.status.toUpperCase()
+if(issue.status==="open"){
+statusClass = "bg-green-600 text-white"
+statusText = "Opened"
+}else{
+statusClass = "bg-purple-600 text-white"
+statusText = "Closed"
+}
+
+document.getElementById("modalStatus").className =
+`px-4 py-1 text-sm rounded-full font-semibold ${statusClass}`
+
+document.getElementById("modalStatus").innerText = statusText
 
 document.getElementById("modalMeta").innerText=`Opened by ${issue.name} • ${issue.date}`
 
