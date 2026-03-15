@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Issues Tracker</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet"/>
+
+</head>
+
+<body class="bg-base-200">
+
+<div id="loginPage" class="flex justify-center items-center min-h-screen">
+  <div class="card w-96 bg-base-100 shadow-xl p-8">
+
+    <div class="text-center mb-4">
+      <img src="assets/github-logo.png" class="w-16 mx-auto mb-3">
+      <h2 class="text-2xl font-bold">GitHub Issues Tracker</h2>
+      <p class="text-gray-500 text-sm">Sign in to manage your issues</p>
+    </div>
+
+    <label class="font-medium mt-2">Username</label>
+    <input id="username" class="input input-bordered mt-1 w-full" placeholder="Enter Username">
+    <p class="text-sm text-purple-600 mt-1">Default: admin</p>
+
+    <label class="font-medium mt-4">Password</label>
+    <input id="password" type="password" class="input input-bordered mt-1 w-full" placeholder="Enter Password">
+    <p class="text-sm text-purple-600 mt-1">Default: admin123</p>
+
+<button id="loginBtn"
+class="btn mt-5 text-white border-0 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 hover:scale-105 transition-all duration-200">
+Sign In
+</button>
+
+    <div class="divider">OR</div>
+
+    <div class="bg-base-200 p-4 rounded-lg text-center text-sm">
+      <p class="text-gray-500 mb-2">Demo Credentials:</p>
+      <p><b>Username:</b> admin</p>
+      <p><b>Password:</b> admin123</p>
+    </div>
+
+  </div>
+</div>
+
+<div id="dashboard" class="hidden">
+
+  <div class="navbar bg-base-100 border-b">
+    <div class="flex-1 text-lg font-bold">
+      <img src="assets/github-logo.png" class="w-8 inline mr-2">
+      GitHub Issues Tracker
+    </div>
+
+    <div class="flex gap-2">
+      <input id="searchInput" placeholder="Search issues..." class="input input-bordered">
+      <button class="btn btn-primary">+ New Issue</button>
+    </div>
+  </div>
+
+  <div class="max-w-6xl mx-auto mt-8">
+
+    <div class="flex gap-2 mb-6">
+      <button id="allBtn" class="btn btn-primary">All</button>
+      <button id="openBtn" class="btn">Open</button>
+      <button id="closedBtn" class="btn">Closed</button>
+    </div>
+
+    <div class="flex justify-between items-center bg-base-100 p-4 rounded-lg shadow mb-6">
+      <div class="flex items-center gap-3">
+        <img src="assets/Aperture.png" class="w-10">
+
+        <div>
+          <h2 class="text-lg font-bold">
+            <span id="issueCount">50</span> Issues
+          </h2>
+
+          <p class="text-sm text-gray-500">
+            Track and manage your project issues
+          </p>
+        </div>
+      </div>
+
+      <div class="text-sm">
+        <span class="text-green-600">● Open</span>
+        <span class="text-purple-600 ml-3">● Closed</span>
+      </div>
+    </div>
+    
+    <div id="issuesContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"></div>
+
+  </div>        
+</div>
+
+<dialog id="issueModal" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box max-w-4xl">
+
+    <h3 id="modalTitle" class="text-2xl font-bold mb-2"></h3>
+
+    <div class="flex items-center gap-2 mb-4">
+      <span id="modalStatus" class="px-3 py-1 text-xs rounded-full font-semibold"></span>
+      <p id="modalMeta" class="text-sm text-gray-500"></p>
+    </div>
+
+    <div id="modalLabels" class="flex gap-2 mb-4"></div>
+
+    <p id="modalDesc" class="text-gray-600 mb-6"></p>
+
+    <div class="bg-base-200 p-5 rounded-lg flex items-center justify-between mb-6">
+
+      <div>
+        <p class="text-sm text-gray-500">Assignee:</p>
+        <p id="modalAssignee" class="font-semibold"></p>
+      </div>
+
+      <div class="flex flex-col items-start">
+        <p class="text-sm text-gray-500">Priority:</p>
+        <span id="modalPriority" class="px-3 py-1 rounded-full text-xs font-semibold"></span>
+      </div>
+
+    </div>
+
+    <div class="text-right">
+      <button id="closeModal" class="btn text-white border-0 bg-gradient-to-r from-purple-600 to-indigo-600">
+        Close
+      </button>
+    </div>
+
+  </div>
+</dialog>
+
+<script src="script.js"></script>
+
+</body>
+</html>
