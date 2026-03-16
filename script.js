@@ -143,6 +143,16 @@ labels+=`<span class="text-xs bg-orange-100 text-orange-600 px-3 py-1 rounded-fu
 if(label==="enhancement"){
 labels+=`<span class="text-xs bg-green-100 text-green-600 px-3 py-1 rounded-full">✧ ENHANCEMENT</span>`
 }
+
+if(label==="good first issue"){
+labels+=`<span class="badge rounded-full bg-gray-200 text-gray-600 border border-gray-300 px-3 py-2 text-xs font-semibold">✧ GOOD FIRST ISSUE</span>`
+}
+if(label==="documentation"){
+labels+=`<span class="text-xs bg-orange-100 text-orange-600 px-3 py-1 rounded-full font-semibold flex items-center gap-1">
+DOCUMENTATION
+</span>`
+}
+
 })
 
 let card=document.createElement("div")
@@ -258,6 +268,14 @@ if(label==="enhancement"){
 labels+=`<span class="bg-green-100 text-green-600 px-3 py-1 text-xs rounded-full font-semibold">✨ ENHANCEMENT</span>`
 }
 
+if(label==="good first issue"){
+labels+=`<span class="badge rounded-full bg-gray-200 text-gray-600 border border-gray-300 px-3 py-2 text-xs font-semibold">✧ GOOD FIRST ISSUE</span>`
+}
+if(label==="documentation"){
+labels+=`<span class="text-xs bg-orange-100 text-orange-600 px-3 py-1 rounded-full font-semibold flex items-center gap-1">
+DOCUMENTATION
+</span>`
+}
 })
 
 let card=document.createElement("div")
@@ -362,6 +380,15 @@ labels+=`<span class="text-xs bg-orange-100 text-orange-600 px-3 py-1 rounded-fu
 
 if(label==="enhancement"){
 labels+=`<span class="text-xs bg-green-100 text-green-600 px-3 py-1 rounded-full">✧ ENHANCEMENT</span>`
+}
+
+if(label==="good first issue"){
+labels+=`<span class="badge rounded-full bg-gray-200 text-gray-600 border border-gray-300 px-3 py-2 text-xs font-semibold">✧ GOOD FIRST ISSUE</span>`
+}
+if(label==="documentation"){
+labels+=`<span class="text-xs bg-orange-100 text-orange-600 px-3 py-1 rounded-full font-semibold flex items-center gap-1">
+DOCUMENTATION
+</span>`
 }
 })
 

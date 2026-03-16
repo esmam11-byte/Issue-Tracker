@@ -6,7 +6,10 @@ iii)const is Cannot be updated or redeclared, value stays constant.
 Ans: The spread operator expands elements of an array or object.
 3️⃣ What is the difference between map(), filter(), and forEach()?
 Ans: i) map creates a new array after modifying elements
-
 ii) filter creates a new array with selected elements
-
 iii) forEach loops through array but returns nothing
+4️⃣ What is an arrow function?
+Ans: An arrow function is a short way to write a function in JavaScript using =>.It does the same thing as a normal function but with less code.
+
+5️⃣ What are template literals?
+Ans: Template literals are a way to write strings using backticks ( ) so variables can be inserted inside the text. It makes combining text and variables easier.
